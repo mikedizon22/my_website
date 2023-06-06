@@ -8,9 +8,9 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      #A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
+      A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
       AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is Mike Dizon, a Filipino Masters in Finance student at LBS
+    title: Hi, my name is Mike Dizon
   blog: {}
   contact:
     address:
@@ -35,12 +35,12 @@ params:
     text: Please visit [this page](/)
   favicon: favicon.ico
   footer:
-    #copyright: Company Name
-    #enable: yes
-    #quicklinks:
-      - #alt: HTML5 UP
-        #text: 'Design: '
-        #url: https://www.html5up.net
+    copyright: Company Name
+    enable: yes
+    quicklinks:
+      - alt: HTML5 UP
+        text: 'Design: '
+        url: https://www.html5up.net
     social:
       - icon: fa-twitter
         label: Twitter
