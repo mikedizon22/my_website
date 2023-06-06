@@ -8,15 +8,14 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
-      AND RELEASED UNDER THE CREATIVE COMMONS.
+      MASTERS IN FINANCE STUDENT AT THE LONDON BUSINESS SCHOOL
     title: Hi, my name is Mike Dizon
   blog: {}
   contact:
     address:
       - city: London, NW8 9RY
         country: United Kingdom
-        street: Grove End Road
+        street: Ascot Court, Grove End Road
         title: Address
     buttonClear: Clear
     buttonSend: Send message
@@ -35,28 +34,28 @@ params:
     text: Please visit [this page](/)
   favicon: favicon.ico
   footer:
-    copyright: Company Name
+    copyright: London Business School
     enable: yes
     quicklinks:
       - alt: HTML5 UP
-        text: 'Design: '
+        #text: 'Design: '
         url: https://www.html5up.net
     social:
       - icon: fa-twitter
         label: Twitter
-        url: https://www.twitter.com
+        url: https://www.twitter.com/ml_dizon
       - icon: fa-facebook
         label: Facebook
-        url: https://www.facebook.com
+        url: https://www.facebook.com/dizonML
       - icon: fa-instagram
         label: Instagram
-        url: https://www.instagram.com
+        url: https://www.instagram.com/mldizon
       - icon: fa-github
         label: GitHub
-        url: https://www.github.com
+        url: https://www.github.com/mikedizon22
       - icon: fa-linkedin
         label: LinkedIn
-        url: https://www.linkedin.com
+        url: https://www.linkedin.com/in/michaellaurencedizon/
   image: ''
   name: Your name
   navigation:
@@ -81,30 +80,30 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
-        url: blogs/aliquam
+      - image: lbs.jpg
+        subtitle: Data Manipulation with R
+        title: Homework 1
+        url: blogs/risk_return
       - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Tempus
-        url: blogs/tempus
+        subtitle: Exploratory Data Analysis
+        title: Homework 2
+        url: blogs/Homework1_MikeDizon
       - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
-        url: blogs/magna
+        subtitle: Databases and Web Scraping
+        title: Homework 3
+        url: blogs/Homework3_MikeDizon
       - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
+        subtitle: Machine Learning
+        title: Homework 4
         url: blogs/ipsum
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
+    #  - image: pic05.jpg
+     #   subtitle: Ipsum Dolor Sit Amet
+      #  title: Consequat
+       # url: blogs/ipsum
+    #  - image: pic06.jpg
+     #   subtitle: Feugiat Amet Tempus
+      #  title: Etiam
+       # url: blogs/ipsum
   two:
     buttonText: Get Started
     enable: yes
