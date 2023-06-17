@@ -77,19 +77,25 @@ early_arrival_flights <- flights %>%
 
 #Calculate the total number of flights per month
 total_monthly_flights <- flights %>% 
+
 #Group the flights dataframe by month
   group_by(month) %>% 
+  
 #Count the number of rows in each group
   summarize(n())
 
 #Calculate the number of cancellations per month 
 monthly_cancellations <- flights %>%
+
 #Filter for departure times that have NA (i.e., cancelled flights)
   filter(is.na(dep_time)) %>%
+  
 #Group the cancelled flights by month
   group_by(month) %>% 
+  
 #Count the number of cancelled flights by month
   summarize(cancelled = sum(is.na(dep_time))) %>%
+  
 #Calculate the proportion of cancelled flights over the total monthly flights
   mutate(prop_cancelled = cancelled/total_monthly_flights) 
 
@@ -112,29 +118,38 @@ flights_filtered <- flights %>%
 
 #Compute number of flights for each tailnum and left join with planes
 flights_by_tailnum <- flights_filtered %>% 
+
 #Group flights by tail number
   group_by(tailnum) %>% 
+  
 #Count number of rows
   summarize(total=n()) %>% 
+  
 #Arrange in descending order to identify tail number with most number of flights
   arrange(desc(total)) %>%
+  
 #Left join resulting table with planes dataframe
   left_join(planes, by = "tailnum")
 
 #Filter planes with more than 50 seats and select the one with the most flights
 plane_with_most_flights <- flights_by_tailnum %>%
+
 #Filter data to get only those with seats grater than 50
   filter(seats>50) %>% 
+  
 #Identify the tail number with the most flights
   top_n(1,total) %>% 
   select(tailnum)
 
 #Get the destinations for the selected plane during 2013
 destinations <- flights_filtered %>% 
+
 #Filter the tail number with the most flights
   filter(tailnum == plane_with_most_flights$tailnum) %>% 
+  
 #Filter the year to 2013
   filter(year == 2013) %>%
+  
 #Select the destinations where the plane flew
   select(dest)
 
@@ -165,46 +180,61 @@ weather %>%
   
 #Use ggplot() to plot the data
   ggplot() +
+  
 #Use temperature as the x-axis
   aes(x = temp) +
+  
 #Visualize data using histogram to see the distribution
   geom_histogram() +
+  
 #Include labels for the resulting diagram
   labs(x = "Temperature", y = "Counts", title = "July 2013 Temperature Distribution")
 
 #Identify the quantile of wind_speed and remove NA values
 quartile <- quantile(weather$wind_speed, na.rm = TRUE)
+
 #Identify interquartile ranges as difference of quartile 4 and 2
 IQR <- as.numeric(quartile[4]) - as.numeric(quartile[2])
+
 #Identify outliers based on those who have wind speed values that are 3 IQR above third quartile or below the first quartile
 outliers <- weather%>%
   filter((wind_speed >= as.numeric(quartile[4]) + 3*IQR) | (wind_speed <= as.numeric(quartile[2]) - 3*IQR)) %>%
+  
 #Arrange filtered data to identify outlier
   arrange(desc(wind_speed))
 
 #Plot the data to identify relationship between dewp and humid
 weather %>% 
   ggplot() +
+  
 #Use dewp as x-axis and humid as y-axis
   aes(x = dewp, y = humid) +
+  
 #Use scatter plot to visualize data points
   geom_point() +
+  
 #Add fitted line to the plot to identify relationship
   geom_smooth() +
+  
 #Include labels in the plot
   labs(title = "Relationship between dewp and humid")
 
 #Plot the data to identify relationship between precip and visib
 weather %>% 
   ggplot() +
+  
 #Use precip as x-axis and visib as y-axis
   aes(x = precip, y = visib) +
+  
 #Use scatter plot to visualize data points
   geom_point() +
+  
 #Add fitted line to the plot to identify relationship
   geom_smooth() +
+  
 #Scale data to see trend clearly
   scale_x_continuous(trans = "log10") +
+  
 #Include labels in the plot
   labs(title = "Relationship between precip and visib")
 
@@ -226,22 +256,28 @@ There also exists a positive relationship between dewp and humid and a negative 
 
 #Identify number of planes with missing date of manufacture
 missing_dates <- planes %>% 
+
 #Calculate the total number of planes
   summarize(sum(is.na(year)))
 
 #Identify the five most common manufacturers
 top_5_manufacturers <- planes %>% 
+
 #Count the number of manufacturers and sort number in descending order
   count(manufacturer, sort = TRUE) %>% 
+  
 #Extract the top five values
   top_n(5)
 
 #Check whether the distribution of manufacturer changed over time
 planes1<- planes %>% 
+
 #Count the combination of manufacturer and year
   count(manufacturer, year) %>% 
+  
 #Add a new column to identify category of manufacturers between those with more than five and those less than five
   mutate(man_category = case_when(n>=5 ~ manufacturer, TRUE ~ "Other")) %>% 
+  
 #Remove those with NA values
   filter(!is.na(year))
 
@@ -254,10 +290,13 @@ planes1$man_category <- case_when(planes1$man_category == "AIRBUS INDUSTRIE" ~ "
 #Use ggplot() to plot planes1 dataframe
 planes1 %>% 
   ggplot() +
+  
 #Use year as x-axis and the number of manufacturers as y-axis
   aes(x = year, y = n) +
+  
 #Plot using stacked columns to see shape of distribution and color based on manufacturer category and also reduce the width of each column
   geom_col(aes(fill = man_category), position = "dodge") +
+  
 #Include labels in the plot
   labs(title = "Distribution of manufacturing year")
 ```
@@ -279,19 +318,25 @@ The distribution of manufacturers have significantly changed over time. Prior to
 
 #Identify the oldest plane from NYC airports in 2013
 oldest_plane <- planes %>% 
+
 #Right join the planes dataframe with the flights dataframe by tail number
   right_join(flights, by = "tailnum") %>% 
+  
 #Arrange data in ascending order by year
   arrange(year.x) %>% 
+  
 #Select the tail number and year columns only
   select(tailnum, year.x) %>% 
+  
 #Extract the top row from the dataframe to see oldest plane
   head(1)
 
 #Identify the number of airplanes that flew from NYC that are included in the planes table
 planes_nyc <- flights %>% 
+
 #Inner join the planes and flights dataframe by tail number
   inner_join(planes, by = "tailnum") %>% 
+  
 #Count the number of planes using their tail numbers 
   summarize(n = n_distinct(tailnum))
 
@@ -312,20 +357,26 @@ The number of airplanes that flew from New York City that are included in the pl
 
 #Identify median arrival delay on a monthly basis for each airport
 median_arrival_delay <- flights %>% 
+
 #Select carrier, origin, month, and arr_delay columns from flights dataframe
   select(carrier, origin, month, arr_delay) %>%
+  
 #Group data by carrier, origin, and month
   group_by(carrier, origin, month) %>%
+  
 #Calculate median of arrival delay
   summarize(median_delay = median(arr_delay, na.rm = TRUE), .groups = "drop")
 
 #Use ggplot() to plot median arrival delay
 median_arrival_delay %>% 
 ggplot() +
+
 #Use month as x-axis, median delay as y-axis, and color by carrier
   aes(x = month, y = median_delay, color = carrier) +
+  
 #Plot the data using a line chart
   geom_line() +
+  
 #Obtain subplots for each airport
   facet_wrap(~ origin)
 
@@ -338,10 +389,13 @@ ggplot() +
 #Left join airlines dataframe with flights dataframe and store into variable fly_into_sfo
 fly_into_sfo <- flights %>% 
   left_join(airlines, by = "carrier") %>% 
+  
 #Filter the San Francisco destination
   filter(dest == "SFO") %>%
+  
 #Group data by name of airline
   group_by(name) %>% 
+  
 #Count the number of flights to SFO per airline and calculate the corresponding proportion of total flights 
   summarize(count = n(), percent = n() / nrow(flights), .groups = "drop")
 
@@ -466,16 +520,20 @@ How would you explore this data set? Here are some ideas of tables/ graphs to he
 #Use ggplot() to identify the shape of distribution of age difference
 age_gaps %>% 
 ggplot() +
+
 #Use the age difference as x-axis
   aes(x = age_difference) +
+  
 #Plot data using histogram and adjust binwidth 
   geom_histogram(binwidth = 5) +
+  
 #Include labels in the plot
   labs(x = "Age Difference", y = "Count", 
        title = "Distribution of Age Difference in Movies")
 
 #Compute for the mean of the age difference
 mean(age_gaps$age_difference)
+
 #Compute for the median of the age difference
 median(age_gaps$age_difference)
 
@@ -516,10 +574,13 @@ freq_acceptable <- sum(age_gaps$acceptable)
 #Group data by the name of movie
 most_love_interests <- age_gaps %>%
   group_by(movie_name) %>%
+  
 #Compute for the sum of couple numbers per movie
   summarise(num_love_interests = sum(couple_number)) %>%
+  
 #Arrange values in descending order
   arrange(desc(num_love_interests)) %>%
+  
 #Extract the top row
   head(1)
 ```
@@ -533,10 +594,13 @@ most_love_interests <- age_gaps %>%
 #Group data by name of actors
 love_interests <- age_gaps %>%
   group_by(actor_1_name) %>%
+  
 #Compute for distinct number of love interest for each specific actor
   summarise(num_love_interests = n_distinct(actor_2_name)) %>%
+  
 #Arrange values in descending order
   arrange(desc(num_love_interests)) %>% 
+  
 #Extract the top 5 actors
   head(5)
 ```
@@ -550,18 +614,23 @@ love_interests <- age_gaps %>%
 #Group data by release year
 age_diff_by_year <- age_gaps %>%
   group_by(release_year) %>%
+  
 #Calculate the mean and meadian age difference by release year
   summarise(mean_age_diff = mean(age_difference), median_age_diff = median(age_difference))
 
 #Use ggplot() to plot the mean and median age difference
 age_diff_by_year %>% 
 ggplot() +
+
 #Use release year as x-axis and mean age difference as y-axis
   aes(x = release_year, y = mean_age_diff) +
+  
 #Plot data using line chart with blue color
   geom_line(color = "blue") +
+  
 #Use line chart to also plot the median age difference with red as color
   geom_line(aes(y = median_age_diff), color = "red") +
+  
 #Include labels in the plot
   labs(x = "Year", y = "Age Difference (Years)", title = "Mean/Median Age Difference Over Time")
 
@@ -576,6 +645,7 @@ ggplot() +
 #Filter for data with the same gender for both characters
 same_gender <- age_gaps %>% 
   filter(character_1_gender == character_2_gender) %>%
+  
 #Count the values
   count()
 
