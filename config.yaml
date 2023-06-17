@@ -70,10 +70,10 @@ params:
         url: '#'
       - name: Blogs
         url: blogs
-      - name: Generic Blog
-        url: blogs/ipsum
-      - name: Elements
-        url: elements.html
+     # - name: Generic Blog
+      #  url: blogs/ipsum
+    # - name: Elements
+      #  url: elements.html
     menu: Menu
     subtitle: By HTML5 Up
     title: Forty
@@ -83,27 +83,27 @@ params:
       - image: lbs.jpg
         subtitle: Data Manipulation with R
         title: Homework 1
-        url: blogs/risk_return
-      - image: pic02.jpg
+        url: blogs/hw1
+      - image: soc.jpg
         subtitle: Exploratory Data Analysis
         title: Homework 2
-        url: blogs/HW1
-      - image: pic03.jpg
+        url: blogs/hw2
+      - image: soc2.jpg
         subtitle: Databases and Web Scraping
         title: Homework 3
-        url: blogs/Homework3_MikeDizon
-      - image: pic04.jpg
+        url: blogs/hw3
+      - image: plg01.jpg
         subtitle: Machine Learning
         title: Homework 4
-        url: blogs/hw1
-    #  - image: pic05.jpg
-     #   subtitle: Ipsum Dolor Sit Amet
-      #  title: Consequat
-       # url: blogs/ipsum
-    #  - image: pic06.jpg
-     #   subtitle: Feugiat Amet Tempus
-      #  title: Etiam
-       # url: blogs/ipsum
+        url: blogs/hw4
+      - image: soc3.jpg
+        subtitle: Risk-Return of DJIA Stocks
+        title: Financial Application of R
+        url: blogs/risk_return
+      - image: soc4.jpg
+        subtitle: Education, Professional Experience, and Interests
+        title: CV
+        url: https://drive.google.com/file/d/1gMfDxO-gL_SWp8j82rbvkWBqwHTyFATP/view
   two:
     buttonText: Get Started
     enable: yes
@@ -113,5 +113,5 @@ params:
       pellentesque lorem ipsum dolor. \r\n    Nullam et orci eu lorem consequat tincidunt.
       Vivamus et sagittis libero.\r\n    Mauris aliquet magna magna sed nunc rhoncus
       amet pharetra et feugiat tempus."
-    title: Massa libero
+    title: Short Description
     url: blogs
