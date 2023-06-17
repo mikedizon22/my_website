@@ -87,7 +87,7 @@ params:
       - image: pic02.jpg
         subtitle: Exploratory Data Analysis
         title: Homework 2
-        url: blogs/Homework1_MikeDizon
+        url: blogs/HW1
       - image: pic03.jpg
         subtitle: Databases and Web Scraping
         title: Homework 3
@@ -95,7 +95,7 @@ params:
       - image: pic04.jpg
         subtitle: Machine Learning
         title: Homework 4
-        url: blogs/ipsum
+        url: blogs/hw1
     #  - image: pic05.jpg
      #   subtitle: Ipsum Dolor Sit Amet
       #  title: Consequat

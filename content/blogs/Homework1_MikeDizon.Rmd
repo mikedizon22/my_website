@@ -1,14 +1,13 @@
 ---
-categories:  
-- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+categories:
 - ""
-date: "2021-09-30"
-description: Data Manipulation with R # the title that will show up once someone gets to this page
+- ""
+date: "2017-10-31T21:28:43-05:00"
+description: ""
 draft: false
-image: spices.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
-
+image: pic10.jpg
 keywords: ""
-slug: Homework1_MikeDizon # slug is the shorthand URL address... no spaces plz
+slug: hw1
 title: Data Manipulation with R
 ---
 
@@ -437,7 +436,7 @@ The age gaps dataset includes "gender" columns, which always contain the values 
 The following is a data dictionary of the variables used
 
 | variable            | class     | description                                                                                             |
-|:--------------------|:----------|:--------------------------------------------------------------------------------------------------------|
+|:------------------|:------------------|:---------------------------------|
 | movie_name          | character | Name of the film                                                                                        |
 | release_year        | integer   | Release year                                                                                            |
 | director            | character | Director of the film                                                                                    |
