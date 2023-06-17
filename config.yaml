@@ -8,7 +8,7 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      MASTERS IN FINANCE STUDENT AT THE LONDON BUSINESS SCHOOL
+      FORMER PUBLIC SERVANT AT THE PHILIPPINE NATIONAL TREASURY. MASTERS IN FINANCE STUDENT AT THE LONDON BUSINESS SCHOOL. HIGHLY PASSIONATE ABOUT THE FIXED INCOME MARKET AND DATA SCIENCE. LOOKING FORWARD TO BUILD MEANINGFUL CONNECTIONS AND EMBRACING NEW CHALLENGES. 
     title: Hi, my name is Mike Dizon
   blog: {}
   contact:
@@ -81,20 +81,20 @@ params:
     enable: yes
     showcase:
       - image: lbs.jpg
-        subtitle: Data Manipulation with R
-        title: Homework 1
+        subtitle: Analyzing Data on NYC Flights in 2013 and Hollywood Age Gaps Through the Years
+        title: Data Manipulation with R
         url: blogs/hw1
       - image: soc.jpg
-        subtitle: Exploratory Data Analysis
-        title: Homework 2
+        subtitle: Visualizing Datasets on Mass Shootings and Credit Card Fraud Transactions
+        title: Exploratory Data Analysis
         url: blogs/hw2
       - image: soc2.jpg
-        subtitle: Databases and Web Scraping
-        title: Homework 3
+        subtitle: Connecting to Large Datasets to Gain Useful Insights on Money in UK Politics and COVID Patients; Scraping the Web for Consultancy Jobs in the UK
+        title: Databases and Web Scraping
         url: blogs/hw3
       - image: plg01.jpg
-        subtitle: Machine Learning
-        title: Homework 4
+        subtitle: Utilizing Machine Learning Models to Evaluate Representation of Women in Films
+        title: Machine Learning
         url: blogs/hw4
       - image: soc3.jpg
         subtitle: Risk-Return of DJIA Stocks
@@ -107,11 +107,6 @@ params:
   two:
     buttonText: Get Started
     enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \r\n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \r\n    Pellentesque
-      condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \r\n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\r\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
+    subtitle: "Hi my name is Mike Dizon, a native of the Republic of the Philippines. I graduated in 2018 with a Bsc in Business Administration and worked for the Philippine National Treasury for 3 years. I am currently taking up a Masters in Finance at the London Business School, hoping to transition into a career in the asset management industry. You can find more details about me through my CV. Recently, I also got very interested in learning about data science through programming languages such as Python and R. In this website, you can see some of my work on data manipulation, data visualization, and machine learning. I hope you found the contents of this website useful and I look forward to connect someday!"
     title: Short Description
     url: blogs
