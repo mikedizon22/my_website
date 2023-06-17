@@ -582,7 +582,3 @@ same_gender <- age_gaps %>%
 ```
 
 **Answer:** From 1935-2022, there have only been 23 instances wherein there were same-gender love interests.
-
-# Deliverables
-
-There is a lot of explanatory text, comments, etc. You do not need these, so delete them and produce a stand-alone document that you could share with someone. Render the edited and completed Quarto Markdown (qmd) file as a Word document (use the "Render" button at the top of the script editor window) and upload it to Canvas. You must be commiting and pushing tour changes to your own Github repo as you go along.
